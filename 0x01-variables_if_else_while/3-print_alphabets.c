@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - prints alpha in lower and upper case
- * Return: 0
+ * main - prints alpha in lower and upper casie
+ * Return: Always 0
  */
 int main(void)
 {
@@ -17,3 +17,4 @@ int main(void)
 	putchar('\n');
 
 	return (0);
+}
