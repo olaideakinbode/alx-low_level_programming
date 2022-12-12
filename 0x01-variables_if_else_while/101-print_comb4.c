@@ -2,6 +2,7 @@
 
 /**
  * main - prints all possible different combos of three digits
+ * Return: 0
  */
 int main(void)
 {
@@ -9,7 +10,7 @@ int main(void)
 	int b = '0';
 	int c = '0';
 
-	for (c = '0'; c <= '0'; c++)
+	for (c = '0'; c <= '9'; c++)
 	{
 		for (b = '0'; b <= '9'; b++)
 		{
