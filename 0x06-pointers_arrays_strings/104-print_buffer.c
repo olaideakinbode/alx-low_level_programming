@@ -1,8 +1,8 @@
 #include "main.h"
-#include <stdio.ih>
+#include <stdio.h>
 
 /**
- * print_line - prints s bytes of a buffer
+ * print_line -  prints a buffer.
  * @c: buffer to print
  * @s: bytes of buffer to print
  * @l: line of buffer to print
@@ -20,7 +20,7 @@ void print_line(char *c, int s, int l)
 		else
 			printf(" ");
 		if (j % 2)
-			putchar(' ')
+			putchar(' ');
 	}
 	for (k = 0; k <= s; k++)
 	{
