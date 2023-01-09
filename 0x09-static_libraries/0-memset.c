@@ -8,12 +8,11 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	int i = 0;
+	unsigned int counter;
 
-	for (; n > 0; i++)
+	for (counter = 0; counter < n; counter++)
 	{
-		s[i] = b;
-		n--;
+		s[counter] = b;
 	}
 	return (s);
 }
