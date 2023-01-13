@@ -1,40 +1,38 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 /**
- * _memset - copy char
- * @s: string
- * @b: input
- * @n: bytes
- * Return: string
+ * string_nconcat - a function that concatenates two strings.
+ * @s1: first char
+ * @s2: second char
+ * @n: unsigned int
+ * Return: NULL incase of failure
  */
-char *_memset(char *s, char b, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
+	unsigned int x, y, z;
 
-	for (i = 0; i < n; i++)
+	char *s; if (s2 == NULL)
+		x = 0;
+	else
 	{
-		s[i] = b;
+		for (x = 0; s1[x]; ++x)
+			;
 	}
+	if (s2 == NULL)
+		y = 0;
+	else
+	{
+		for (y = 0; s2[y]; ++y)
+		;
+	}
+	if (y > n)
+		y = n;
+	s = malloc(sizeof(char) * (x + y + 1));
+	if (s == NULL)
+		return (NULL);
+	for (z = 0; z < x; z++)
+		s[z] = s1[z];
+	for (z = 0; z < y; z++)
+		s[z + x] = s2[z];
+	s[x + y] = '\0';
 	return (s);
-}
-
-/**
- * _calloc - allocates memory for an array using malloc
- * @nmemb: n elements
- * @size:  bytes
- * Return: pointer
- */
-
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	void *p;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	p = malloc(nmemb * size);
-	if (p == NULL)
-		return (NULL);
-	_memset(p, 0, (nmemb * size));
-	return (p);
 }
