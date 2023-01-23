@@ -1,31 +1,73 @@
-#include <stdio.h>
 #include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * get_op_func - function pointer that selects the correct function to perform
- * the operation asked by the user
- * @s: the operator given by the user
- * Return: pointer to the function
+ * op_add - returns the sum of a and b
+ * @a: a
+ * @b: b
+ * Return: ...
+ *
  */
 
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i;
+	return (a + b);
+}
 
-	i = 0;
-	while (ops[i].op)
+/**
+ * op_sub - returns the difference of a and b
+ * @a: a
+ * @b: b
+ * Return: ...
+ */
+
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+ * op_mul -returns the product of a and b
+ * @a: a
+ * @b: b
+ * Return: ...
+ */
+
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ * op_div - ...
+ * @a: ...
+ * @b: ...
+ * Return: ...
+ */
+
+int op_div(int a, int b)
+{
+	if (b == 0)
 	{
-		if (strcmp(ops[i].op, s) == 0)
-			return (ops[i].f);
-		i++;
+		printf("Error\n");
+		exit(100);
 	}
-	return (NULL);
+	return (a / b);
+}
+/**
+ * op_mod - ...
+ * @a: ...
+ * @b: ...
+ * Return: ...
+ */
+
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a % b);
 }
