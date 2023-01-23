@@ -7,6 +7,7 @@
  * @n: number of bytes to print
  * Return: void
  */
+
 void print_opcodes(char *a, int n)
 {
 	int i;
@@ -14,11 +15,12 @@ void print_opcodes(char *a, int n)
 	for (i = 0; i < n; i++)
 	{
 		printf("%.2hhx", a[i]);
-		if (i  n - 1)
+		if (i < n - 1)
 			printf(" ");
 	}
 	printf("\n");
 }
+
 /**
  * main - prints the opcodes of its own main function
  * @argc: number of arguments passed to the function
